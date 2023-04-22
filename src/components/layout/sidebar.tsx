@@ -26,15 +26,90 @@ function getItem(
   } as MenuItem;
 }
 
+// layout parçala
+// routing
+// form
+// dynamic input
+// ui/ux
+// mimari
+// yetki matrisi  *major
+// eğitim
+// performans
+// sertifikasyon
+// izin süreçleri
+// personel alımı
+// modüler sayfalar
+// modüler yetkiler
+// yetki ağaçları
+// ik 
+// kadro
+// anket
+// quiz
+// görsel
+// onpremise - cloud ?
+// küçük ölçek,orta ölçek, büyük ölçek, holding, bir holdşinge bağlı fazla şirket?
+// çok uzun vadeli özellikler(...)
+// loglama
+// personel davranışı tespiti(loglama, eğitimci desteği, kurgu nasıl olacak)
+// personel yönlendirme
+// tek bütün halinde bir şey mi yoksa yoksa küçük küçük parçaların birleşimi şeklinde mi olmalı (satış?)
+
+
 const items: MenuItem[] = [
-  getItem(<Link to="">Home</Link>, 'home', <AiOutlineHome />),
+  getItem(<Link to="">Anasayfa</Link>, 'home', <AiOutlineHome />),
   // {
   //   type: 'divider',
   // },
-  getItem(<Link to="/projects">Projeler</Link>, 'projects', <AiTwotoneBuild />),
-  getItem(<Link to="/demo">Vercel Demos</Link>, 'demo', <TbBrandVercel />),
-  getItem(<Link to="/portfolio">Portfolyo</Link>, 'portfolio', <AiOutlineFilePdf />),
-  getItem(<Link to="/components">Components</Link>, 'components', <AiOutlineInsertRowBelow />),
+  getItem('Performans', 'sub1', <AiOutlineHome />, [
+    getItem('Personel', '1', <AiOutlineHome />),
+    getItem('Değerlendirme', '2', <AiOutlineHome />),
+    getItem('Tanımlama', '3', <AiOutlineHome />),
+  ]),
+  getItem('Personel', 'sub2', <AiOutlineHome />, [
+    getItem('Kadro', '4', <AiOutlineHome />),
+    getItem('Hiyerarşi', '5', <AiOutlineHome />),
+    getItem('Tanımlama', '6', <AiOutlineHome />),
+  ]),
+
+  getItem('Chat', 'sub3', <AiOutlineHome />, [
+    getItem('Genel', '7', <AiOutlineHome />),
+    getItem('Grup', '8', <AiOutlineHome />),
+    getItem('Özel', '9', <AiOutlineHome />),
+    getItem('Tanımlama', '10', <AiOutlineHome />),
+  ]),
+
+  getItem('Eğitim', 'sub4', <AiOutlineHome />, [
+    getItem('Personel', '11', <AiOutlineHome />),
+    getItem('Değerlendirme', '12', <AiOutlineHome />),
+    getItem('Tanımlama', '13', <AiOutlineHome />),
+  ]),
+
+  getItem('Sertifika', 'sub5', <AiOutlineHome />, [
+    getItem('Personel', '14', <AiOutlineHome />),
+    getItem('Değerlendirme', '15', <AiOutlineHome />),
+    getItem('Tanımlama', '16', <AiOutlineHome />),
+  ]),
+
+  getItem('IK', 'sub6', <AiOutlineHome />, [
+    getItem('Personel', '17', <AiOutlineHome />),
+    getItem('Belge', '18', <AiOutlineHome />),
+    getItem('İzin', '19', <AiOutlineHome />),
+    getItem('İşe Alım', '20', <AiOutlineHome />),
+    getItem('İşten Çıkış', '21', <AiOutlineHome />),
+    getItem('Eğitim', '22', <AiOutlineHome />),
+    getItem('Bordro Özlük', '23', <AiOutlineHome />),
+    getItem('Tanımlama', '24', <AiOutlineHome />),
+  ]),
+
+  getItem('İletişim', 'sub7', <AiOutlineHome />, [
+    getItem('Anket', '25', <AiOutlineHome />),
+    getItem('Quiz', '26', <AiOutlineHome />),
+    getItem('Görsel', '27', <AiOutlineHome />),
+    getItem('LCV', '28', <AiOutlineHome />),
+    getItem('Tanımlama', '29', <AiOutlineHome />),
+  ]),
+
+  getItem('Yetkili', 'sub8', <AiOutlineHome />),
 ];
 
 
@@ -60,15 +135,7 @@ const Sidebar: React.FC = (...props) => {
         unCheckedChildren="Light"
         style={{ marginBottom: 10 }}
       />
-      <Divider />
 
-      <Space direction='horizontal' size={5}>
-
-        <Button target='_blank' href={"https://www.linkedin.com/in/hakan-unal/"} icon={<AiOutlineLinkedin color='blue' size={25} />} />
-        <Button target='_blank' href={"https://github.com/Hakan-unal"} icon={<AiOutlineGithub size={25} />} />
-
-      </Space>
-      <Divider />
       <Menu
         onMouseEnter={() => setCollapsed(false)}
         onMouseLeave={() => setCollapsed(true)}

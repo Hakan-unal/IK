@@ -1,26 +1,51 @@
-import { Link } from "react-router-dom";
-import { Row, Col, Card, Image, Space } from "antd";
+import { Row, Col, Card, Image, Space, Timeline } from "antd";
+import { TbBrandVercel } from "react-icons/tb";
+import { ClockCircleOutlined } from '@ant-design/icons';
 
-const Page404 = (props: any) => {
-  return (<Card style={{ textAlign: "center", fontSize: "4.3vh" }} >
-    Hey&#x1F44B;, It's Hakan. Currently working as Software Engineer at <a style={{ color: "#452170" }} href="https://innovance.com.tr/">Innovance</a>.
-    Here you can learn more about me and my ideas.
+const Home = (props: any) => {
+    return (<Card title="Sayfa akışı ? be tablo ? flowchart ? süreç ? ilişkiler ?">
+        <Timeline
+            mode="left"
+            items={[
+                {
+                    label: '2015-09-01',
+                    children: 'Create a services',
+                },
+                {
+                    label: '2015-09-01 09:12:11',
+                    children: 'Solve initial network problems',
+                },
+                {
+                    children: 'Technical testing',
+                },
+                {
+                    label: '2015-09-01 09:12:11',
+                    children: 'Network problems being solved',
+                },
+                {
+                    label: '2015-09-01 09:12:11',
+                    children: 'Network problems being solved',
+                    color: 'red',
+                    dot: <ClockCircleOutlined className="timeline-clock-icon" />
 
-    <Row>
-      <Col xs={{ span: 20, offset: 2 }} sm={{ span: 16, offset: 4 }} md={{ span: 12, offset: 6 }} lg={{ span: 10, offset: 7 }}>
-        <Card
-          cover={
-            <Image
-              preview={false}
-              alt="yoda"
-              src="https://www.macleans.ca/wp-content/uploads/2019/11/BABY-YODA-MANDALORIAN-NOV19-810x445.jpg"
-            />
-          }
+                },
+                {
+                    label: '2015-09-01 09:12:11',
+                    children: 'Network problems being solved',
+                },
+                {
+                    label: '2015-09-01 09:12:11',
+                    children: 'Network problems being solved',
+                },
+                {
+                    label: '2015-09-01 09:12:11',
+                    children: 'Network problems being solved',
+                },
+            ]}
         />
-      </Col>
-    </Row>
-  </Card>
-  );
+
+    </Card>
+    );
 };
 
-export default Page404;
+export default Home;
