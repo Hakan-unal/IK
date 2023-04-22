@@ -26,33 +26,6 @@ function getItem(
   } as MenuItem;
 }
 
-// layout parçala
-// routing
-// form
-// dynamic input
-// ui/ux
-// mimari
-// yetki matrisi  *major
-// eğitim
-// performans
-// sertifikasyon
-// izin süreçleri
-// personel alımı
-// modüler sayfalar
-// modüler yetkiler
-// yetki ağaçları
-// ik 
-// kadro
-// anket
-// quiz
-// görsel
-// onpremise - cloud ?
-// küçük ölçek,orta ölçek, büyük ölçek, holding, bir holdşinge bağlı fazla şirket?
-// çok uzun vadeli özellikler(...)
-// loglama
-// personel davranışı tespiti(loglama, eğitimci desteği, kurgu nasıl olacak)
-// personel yönlendirme
-// tek bütün halinde bir şey mi yoksa yoksa küçük küçük parçaların birleşimi şeklinde mi olmalı (satış?)
 
 
 const items: MenuItem[] = [
