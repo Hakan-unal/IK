@@ -109,7 +109,10 @@ const items: MenuItem[] = [
     getItem('Tanımlama', '29', <AiOutlineHome />),
   ]),
 
-  getItem('Yetkili', 'sub8', <AiOutlineHome />),
+  getItem('Yetkili', 'sub8', <AiOutlineHome />, [
+    getItem('İstatistik', '25', <AiOutlineHome />),
+    getItem('Tanımlama', '29', <AiOutlineHome />),
+  ]),
 ];
 
 
