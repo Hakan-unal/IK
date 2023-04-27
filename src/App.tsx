@@ -7,10 +7,16 @@ import page404 from "./pages/404/404"
 import Sidebar from './components/layout/sidebar';
 import { useLocalStorage } from "./hooks/useLocalStorage"
 import { useEffect } from "react";
+import { navigator } from "./components/general/navigator";
+import { useNavigate, Navigate } from "react-router-dom";
+import { showNotification } from "./components/general/notification";
+
 const { Content } = Layout;
 
 const App: React.FC = () => {
   const deneme = useLocation()
+  const [user, setUser] = useLocalStorage("user", {})
+  const navigate = useNavigate();
 
   const {
     token: { colorBgContainer },
@@ -18,11 +24,19 @@ const App: React.FC = () => {
 
   useEffect(() => {
     console.log(deneme)
-  }, [deneme])
+    console.log(user)
+
+  }, [deneme, user])
+
+  useEffect(() => {
+    if (!user.accessToken) navigator(navigate, "/login")
+  }, [user])
+
+
 
 
   return (<Layout >
-    <Sidebar />
+    {user.accessToken && <Sidebar />}
     <Layout>
       {
         // optional header
@@ -38,9 +52,9 @@ const App: React.FC = () => {
       >
         <Routes>
           {/* <Route path="/" Component={Home}></Route> */}
-          <Route path="/login/:test1/:test2/:test3/:test4/:test5" Component={Login}></Route>
+          <Route path="/login" Component={Login}></Route>
 
-          {/* <Route path="*" Component={Home}></Route> */}
+          /* <Route path="*" Component={Home}></Route> */
         </Routes>
 
       </Content>

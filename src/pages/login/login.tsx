@@ -4,21 +4,74 @@ import { ClockCircleOutlined } from '@ant-design/icons';
 import { useState } from "react";
 import { useParams } from 'react-router-dom';
 import { useLocalStorage } from "../../hooks/useLocalStorage"
+import testData from "../../staticData/user.json"
+import { showNotification } from "../../components/general/notification";
+import { navigator } from "../../components/general/navigator";
+import { useNavigate, Navigate } from "react-router-dom";
 
 
-
+const testTest = {
+    "username": "test",
+    "departman": "blabla",
+    "accessToken": "blablablablabla",
+    "authorization": [
+        {
+            "name": "Performans",
+            "id": 1
+        },
+        {
+            "name": "Personel",
+            "id": 2
+        },
+        {
+            "name": "Chat",
+            "id": 3
+        },
+        {
+            "name": "Eğitim",
+            "id": 4
+        },
+        {
+            "name": "Sertifika",
+            "id": 5
+        },
+        {
+            "name": "IK",
+            "id": 6
+        },
+        {
+            "name": "İletişim",
+            "id": 7
+        },
+        {
+            "name": "Yetkili",
+            "id": 8
+        }
+    ]
+}
 const Login = (props: any) => {
     const { test1, test2, test3, test4, test5 } = useParams();
     const [user, setUser] = useLocalStorage("user", {})
+    const navigate = useNavigate();
+
 
     const onFinish = (values: any) => {
-        console.log('Success:', values);
+        console.log(testData)
+        // api call catch,then=>
+        showNotification("success", "Başarılı", "Login oldunuz hoşgeldin: " + values.username, null)
+        setUser(testTest)
+        // navigator(navigate, "/")
     };
 
     const onFinishFailed = (errorInfo: any) => {
-        console.log('Failed:', errorInfo);
+        showNotification("error", "Başarısız", "Login oldunuz", null)
+
     };
     return (<Card title={test1 + " " + test2 + " " + test3 + " " + test4 + " " + test5} >
+
+        {user.accessToken && (
+            <Navigate to="/" replace={true} />
+        )}
         <Form
             name="basic"
             labelCol={{ span: 6 }}

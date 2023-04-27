@@ -1,0 +1,39 @@
+{
+    "username": "test",
+    "departman": "blabla",
+    "accessToken": "blablablablabla",
+    "authorization": [
+        {
+            "name": "Performans",
+            "id": 1
+        },
+        {
+            "name": "Personel",
+            "id": 2
+        },
+        {
+            "name": "Chat",
+            "id": 3
+        },
+        {
+            "name": "Eğitim",
+            "id": 4
+        },
+        {
+            "name": "Sertifika",
+            "id": 5
+        },
+        {
+            "name": "IK",
+            "id": 6
+        },
+        {
+            "name": "İletişim",
+            "id": 7
+        },
+        {
+            "name": "Yetkili",
+            "id": 8
+        }
+    ]
+}
