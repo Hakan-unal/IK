@@ -9,46 +9,6 @@ import { showNotification } from "../../components/general/notification";
 import { navigator } from "../../components/general/navigator";
 import { useNavigate, Navigate } from "react-router-dom";
 
-
-const testTest = {
-    "username": "test",
-    "departman": "blabla",
-    "accessToken": "blablablablabla",
-    "authorization": [
-        {
-            "name": "Performans",
-            "id": 1
-        },
-        {
-            "name": "Personel",
-            "id": 2
-        },
-        {
-            "name": "Chat",
-            "id": 3
-        },
-        {
-            "name": "Eğitim",
-            "id": 4
-        },
-        {
-            "name": "Sertifika",
-            "id": 5
-        },
-        {
-            "name": "IK",
-            "id": 6
-        },
-        {
-            "name": "İletişim",
-            "id": 7
-        },
-        {
-            "name": "Yetkili",
-            "id": 8
-        }
-    ]
-}
 const Login = (props: any) => {
     const { test1, test2, test3, test4, test5 } = useParams();
     const [user, setUser] = useLocalStorage<any>("user", {})
@@ -57,7 +17,7 @@ const Login = (props: any) => {
 
     const onFinish = (values: any) => {
         // api call catch,then=>
-        setUser(testTest)
+        setUser(testData)
 
         showNotification("success", "Başarılı", "Login oldunuz hoşgeldin: " + values.username, null)
         navigator(navigate, "/")
