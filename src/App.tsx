@@ -1,17 +1,24 @@
 
 import { Layout, Menu, theme } from "antd"
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useParams, useLocation } from 'react-router-dom';
 import Home from "./pages/home/home"
+import Login from "./pages/login/login"
 import page404 from "./pages/404/404"
 import Sidebar from './components/layout/sidebar';
-
+import { useLocalStorage } from "./hooks/useLocalStorage"
+import { useEffect } from "react";
 const { Content } = Layout;
 
 const App: React.FC = () => {
+  const deneme = useLocation()
 
   const {
     token: { colorBgContainer },
   } = theme.useToken();
+
+  useEffect(() => {
+    console.log(deneme)
+  }, [deneme])
 
 
   return (<Layout >
@@ -31,8 +38,9 @@ const App: React.FC = () => {
       >
         <Routes>
           {/* <Route path="/" Component={Home}></Route> */}
+          <Route path="/login/:test1/:test2/:test3/:test4/:test5" Component={Login}></Route>
 
-          <Route path="*" Component={Home}></Route>
+          {/* <Route path="*" Component={Home}></Route> */}
         </Routes>
 
       </Content>

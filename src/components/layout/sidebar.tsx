@@ -29,7 +29,7 @@ function getItem(
 
 
 const items: MenuItem[] = [
-  getItem(<Link to="">Anasayfa</Link>, 'home', <AiOutlineHome />),
+  getItem(<Link to="/login/bunu/yazan/tosun/okuyana/kosun">Anasayfa</Link>, 'home', <AiOutlineHome />),
   // {
   //   type: 'divider',
   // },
@@ -83,8 +83,8 @@ const items: MenuItem[] = [
   ]),
 
   getItem('Yetkili', 'sub8', <AiOutlineHome />, [
-    getItem('İstatistik', '25', <AiOutlineHome />),
-    getItem('Tanımlama', '29', <AiOutlineHome />),
+    getItem('İstatistik', '30', <AiOutlineHome />),
+    getItem('Tanımlama', '31', <AiOutlineHome />),
   ]),
 ];
 
