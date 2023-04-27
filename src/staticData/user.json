@@ -2,6 +2,7 @@
     "username": "test",
     "departman": "blabla",
     "accessToken": "blablablablabla",
+    "refreshToken": "blablablabla",
     "authorization": [
         {
             "name": "Performans",

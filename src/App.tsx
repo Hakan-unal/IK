@@ -5,7 +5,7 @@ import Home from "./pages/home/home"
 import Login from "./pages/login/login"
 import page404 from "./pages/404/404"
 import Sidebar from './components/layout/sidebar';
-import { useLocalStorage } from "./hooks/useLocalStorage"
+import useLocalStorage from "./hooks/useLocalStorage"
 import { useEffect } from "react";
 import { navigator } from "./components/general/navigator";
 import { useNavigate, Navigate } from "react-router-dom";
@@ -21,12 +21,6 @@ const App: React.FC = () => {
   const {
     token: { colorBgContainer },
   } = theme.useToken();
-
-  useEffect(() => {
-    console.log(deneme)
-    console.log(user)
-
-  }, [deneme, user])
 
   useEffect(() => {
     if (!user.accessToken) navigator(navigate, "/login")

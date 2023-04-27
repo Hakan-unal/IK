@@ -3,7 +3,7 @@ import { TbBrandVercel } from "react-icons/tb";
 import { ClockCircleOutlined } from '@ant-design/icons';
 import { useState } from "react";
 import { useParams } from 'react-router-dom';
-import { useLocalStorage } from "../../hooks/useLocalStorage"
+import useLocalStorage from "../../hooks/useLocalStorage"
 import testData from "../../staticData/user.json"
 import { showNotification } from "../../components/general/notification";
 import { navigator } from "../../components/general/navigator";
@@ -56,22 +56,22 @@ const Login = (props: any) => {
 
 
     const onFinish = (values: any) => {
-        console.log(testData)
         // api call catch,then=>
-        showNotification("success", "Başarılı", "Login oldunuz hoşgeldin: " + values.username, null)
         setUser(testTest)
-        // navigator(navigate, "/")
+
+        showNotification("success", "Başarılı", "Login oldunuz hoşgeldin: " + values.username, null)
+        navigator(navigate, "/")
     };
 
     const onFinishFailed = (errorInfo: any) => {
-        showNotification("error", "Başarısız", "Login oldunuz", null)
+        showNotification("error", "Başarısız", "Login sürecinde hatayla karşılaşıldı", null)
 
     };
     return (<Card title={test1 + " " + test2 + " " + test3 + " " + test4 + " " + test5} >
 
-        {user.accessToken && (
+        {/* {!user.accessToken && (
             <Navigate to="/" replace={true} />
-        )}
+        )} */}
         <Form
             name="basic"
             labelCol={{ span: 6 }}

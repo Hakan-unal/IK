@@ -9,7 +9,7 @@ import { navigator } from "../../components/general/navigator";
 import { useNavigate, Navigate } from "react-router-dom";
 import { Layout, Menu, Switch } from "antd"
 import { Link } from 'react-router-dom';
-import { useLocalStorage } from "../../hooks/useLocalStorage"
+import useLocalStorage from "../../hooks/useLocalStorage"
 
 const { Sider } = Layout;
 type MenuItem = Required<MenuProps>['items'][number];
@@ -47,7 +47,7 @@ const Sidebar: React.FC = (...props) => {
     setUser({})
 
     navigator(navigate, "/login")
-    showNotification("success", "Başarılı", "Logout oldunuz " + user.username, null)
+    showNotification("success", "Başarılı", "Logout oldunuz ", null)
   }
 
   const items: MenuItem[] = [
