@@ -40,7 +40,7 @@ const Sidebar: React.FC = (...props) => {
   const [mode, setMode] = useState<MenuTheme>('light');
   const [current, setCurrent] = useState('home');
   const navigate = useNavigate();
-  const [user, setUser] = useLocalStorage("user", {})
+  const [user, setUser] = useLocalStorage<any>("user", {})
 
   const handleLogout = () => {
     //api call

@@ -51,7 +51,7 @@ const testTest = {
 }
 const Login = (props: any) => {
     const { test1, test2, test3, test4, test5 } = useParams();
-    const [user, setUser] = useLocalStorage("user", {})
+    const [user, setUser] = useLocalStorage<any>("user", {})
     const navigate = useNavigate();
 
 

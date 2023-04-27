@@ -15,7 +15,7 @@ const { Content } = Layout;
 
 const App: React.FC = () => {
   const deneme = useLocation()
-  const [user, setUser] = useLocalStorage("user", {})
+  const [user, setUser] = useLocalStorage<any>("user", {})
   const navigate = useNavigate();
 
   const {
